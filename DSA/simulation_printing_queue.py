@@ -56,7 +56,7 @@ def sim(num_sec, PagesPerMin):
         printer.tick()
 
     avg_wait = sum(wait_time)/len(wait_time)
-    print(f"Average wait time is {avg_wait:.2f} second, {q.size()} task remaining")
+    print(f"Average wait time is {avg_wait:6.2f} second, {q.size():3d} task remaining")
 
 def newTask():
     num = random.randrange(0,181) 
