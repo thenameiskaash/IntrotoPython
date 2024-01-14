@@ -1,4 +1,4 @@
-from Stack import *
+from stack import *
 import pytest
 
 @pytest.fixture
