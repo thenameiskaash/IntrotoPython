@@ -25,6 +25,11 @@ print(temp.getData())
 
 # The reference 'None' to denote the "end" of the linked structure.
 
+# Unordered Linked List : Elements can be inserted in any order, without any specific rules or constraints. 
+# Order of elemnts is determined by the sequence in which they are inserted.
+
+# [54, 26, 93, 17, 77, 31]
+
 class UnorderedList:
     def __init__(self):
         self.head = None
@@ -80,10 +85,20 @@ class UnorderedList:
                 current = temp
         current.next = temp
 
-    # def insert(self, item, previous):
-    #     temp = Node(item)
-    #     temp.next = previous.next
-    #     previous.next = temp
+    def insert(self, index, item):
+        count = 0
+        current = self.head
+        temp = Node(item)
+        if index == 0: # In case of inserting in the first position
+            temp.next = current
+            current = temp
+        else:
+            while count <= index - 1:
+                count+=1
+                current = current.getNext()
+            
+            temp.next = current.next
+            current.next = temp
 
     def display(self):
         display = []
@@ -109,6 +124,12 @@ print("Does the number exist in the list :", mylist.search(17))
 
 mylist.append(99)
 
-print(mylist.size())
-
 print(mylist.display())
+
+a = UnorderedList()
+a.add(1)
+a.append(2)
+a.append(3)
+print(a.display())
+a.insert(1, 5)
+print(a.display())
